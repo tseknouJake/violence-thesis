@@ -1,0 +1,11 @@
+data_root: data/bus-violence
+split_file: splits/bus_violence_splits.json
+model: slowfast_r50
+epochs: 20
+batch_size: 4
+num_frames: 32
+img_size: 224
+lr: 1e-4
+corruption: null
+severity: 1
+checkpoint: checkpoints/bus_slowfast_best.pt
