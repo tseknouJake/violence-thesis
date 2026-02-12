@@ -1,0 +1,27 @@
+{
+  "seed": 42,
+  "total": 1400,
+  "by_split": {
+    "train": 980,
+    "val": 210,
+    "test": 210
+  },
+  "by_class": {
+    "Violence": 700,
+    "NoViolence": 700
+  },
+  "by_split_and_class": {
+    "train": {
+      "Violence": 490,
+      "NoViolence": 490
+    },
+    "val": {
+      "Violence": 105,
+      "NoViolence": 105
+    },
+    "test": {
+      "Violence": 105,
+      "NoViolence": 105
+    }
+  }
+}

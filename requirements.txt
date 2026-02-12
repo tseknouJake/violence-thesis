@@ -1,0 +1,2 @@
+# Intentionally minimal starter requirements.
+# Add model/framework deps (e.g., torch, pytorchvideo, mmcv) in a later phase.

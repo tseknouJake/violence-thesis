@@ -1,0 +1,28 @@
+{
+  "dataset_dir": "/Users/jakelockitch/Desktop/violence-thesis/data/bus-violence",
+  "class_counts": {
+    "Violence": 700,
+    "NoViolence": 700,
+    "total": 1400
+  },
+  "class_ratio": {
+    "Violence": 0.5,
+    "NoViolence": 0.5
+  },
+  "sample_files": {
+    "Violence": [
+      "Violence/VIOLENCE_826.mp4",
+      "Violence/VIOLENCE_198.mp4",
+      "Violence/VIOLENCE_173.mp4",
+      "Violence/VIOLENCE_601.mp4",
+      "Violence/VIOLENCE_167.mp4"
+    ],
+    "NoViolence": [
+      "NoViolence/NONVIOLENCE_3184.mp4",
+      "NoViolence/NONVIOLENCE_487.mp4",
+      "NoViolence/NONVIOLENCE_336.mp4",
+      "NoViolence/NONVIOLENCE_444.mp4",
+      "NoViolence/NONVIOLENCE_2503.mp4"
+    ]
+  }
+}
