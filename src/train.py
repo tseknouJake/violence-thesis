@@ -46,6 +46,8 @@ def main():
     parser.add_argument("--data-root", default="data/bus-violence")
     parser.add_argument("--split-file", default="splits/bus_violence_splits.json")
     parser.add_argument("--model", default="r3d_18")
+    parser.add_argument("--pretrained", action="store_true", default=True)
+    parser.add_argument("--no-pretrained", dest="pretrained", action="store_false")
     parser.add_argument("--epochs", type=int, default=20)
     parser.add_argument("--batch-size", type=int, default=4)
     parser.add_argument("--num-frames", type=int, default=32)
@@ -62,7 +64,7 @@ def main():
     train_loader = make_loader(args, "train", batch_size=args.batch_size)
     val_loader = make_loader(args, "val", batch_size=args.batch_size)
 
-    model = make_model(name=args.model)
+    model = make_model(name=args.model, pretrained=args.pretrained)
     model.to(device)
 
     criterion = nn.CrossEntropyLoss()
