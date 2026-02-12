@@ -1,0 +1,12 @@
+{
+  "experiment_name": "clean_baseline_stub",
+  "model_name": "majority_classifier",
+  "baseline_strategy": "majority",
+  "seed": 42,
+  "output_root": "outputs/experiments",
+  "splits": {
+    "train": "outputs/splits/train.csv",
+    "val": "outputs/splits/val.csv",
+    "test": "outputs/splits/test.csv"
+  }
+}

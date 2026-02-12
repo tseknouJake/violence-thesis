@@ -63,6 +63,66 @@ This writes:
 6. Compare clean vs corrupted performance, FP/FN behavior, and latency.
 7. Write results chapter while experiments run.
 
+## 8) Run The Experiment Scaffold
+
+Run a standardized baseline stub (sanity check for the full pipeline):
+
+```bash
+python scripts/03_run_baseline_stub.py --config configs/baseline_stub_clean.json
+```
+
+This writes one run folder in `outputs/experiments/<run_id>/` with:
+
+- `run_log.json` (time, git commit, config snapshot, environment)
+- `predictions_val.csv`
+- `predictions_test.csv`
+- `metrics_val.json`
+- `metrics_test.json`
+
+Evaluate any future model predictions with the same metric code:
+
+```bash
+python scripts/04_score_predictions.py \
+  --pred_csv outputs/experiments/<run_id>/predictions_test.csv \
+  --output outputs/experiments/<run_id>/metrics_test_rescored.json
+```
+
+Expected columns in prediction CSV:
+- `y_true` (0/1)
+- `y_pred` (0/1)
+- optional `y_score` (probability/confidence for ROC-AUC)
+
+## 9) What To Record Per Run
+
+For every run (clean and corrupted), record:
+
+1. Setup metadata:
+- model name + version
+- dataset + split files + seed
+- preprocessing/transforms
+- corruption type + severity (if any)
+- hardware (GPU/CPU), batch size, training time
+
+2. Performance metrics:
+- accuracy, precision, recall, F1
+- ROC-AUC
+- confusion matrix (TP, FP, TN, FN)
+- false positive rate and false negative rate
+
+3. Practical viability metrics:
+- inference latency (ms/video)
+- throughput (videos/sec)
+- memory usage (if available)
+
+4. Robustness comparisons:
+- clean vs mild/medium/severe deltas
+- per-corruption performance drop table
+- FP increase under each corruption
+
+5. Notes:
+- failure mode examples (short clips or IDs)
+- any instability, training failures, or anomalies
+
 ## 6) Suggested Chapter/Work Packages
 
 1. Literature + evidence mapping.

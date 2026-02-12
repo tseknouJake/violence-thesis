@@ -1,0 +1,1 @@
+date,run_id,model,dataset,split_seed,corruption_type,corruption_severity,input_resolution,fps,train_time_min,inference_ms_per_video,throughput_videos_per_sec,accuracy,precision,recall,f1,roc_auc,tp,fp,tn,fn,notes

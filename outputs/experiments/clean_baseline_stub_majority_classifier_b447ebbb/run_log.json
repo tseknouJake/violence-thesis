@@ -1,0 +1,22 @@
+{
+  "run_id": "clean_baseline_stub_majority_classifier_b447ebbb",
+  "started_at_utc": "2026-02-12T12:14:29.385839+00:00",
+  "finished_at_utc": "2026-02-12T12:14:29.389954+00:00",
+  "duration_seconds": 0.004,
+  "git_commit": "68669833f658214f1f15289c0777ed085550733b",
+  "config_snapshot": {
+    "experiment_name": "clean_baseline_stub",
+    "model_name": "majority_classifier",
+    "baseline_strategy": "majority",
+    "seed": 42,
+    "output_root": "outputs/experiments",
+    "splits": {
+      "train": "outputs/splits/train.csv",
+      "val": "outputs/splits/val.csv",
+      "test": "outputs/splits/test.csv"
+    }
+  },
+  "environment": {
+    "python_version": "3.13.0 (v3.13.0:60403a5409f, Oct  7 2024, 00:37:40) [Clang 15.0.0 (clang-1500.3.9.4)]"
+  }
+}
