@@ -1,0 +1,259 @@
+Bachelor thesis plan
+
+Spring 2026 - Plan submission deadline: 16/01/2026
+Department of Advanced Computing Sciences
+Board of Examiners
+
+Personal Details
+Name: (Student’s family name and first names)
+Jake Oliver Lockitch
+Student number: (Student’s ID number as provided by university)
+6405499
+Start date of thesis research: (Cannot be prior to receiving BoE permission, hence must be in the future)
+Expected graduation date: (Date of the regular bachelor conference where the thesis will be defended:
+•
+Regular defence: 5-17 June 2026 (TBA) / Resit defence: 24-28 August 2026 (TBA)
+5-17 June 2026
+Programme: please select from drop-down list
+The student is enrolled in the KE@Work/CS@Work programme (check if applicable)
+The student is enrolled in the Marble 2.0 programme (check if applicable)
+
+Supervision details
+The thesis supervisors are DACS staff members that give process based and content-based supervision. At least one of
+the thesis supervisor acts as an examiner. External supervisors are listed in the next section.
+Name DACS thesis supervisor 1: Mirela Popa
+Name DACS thesis supervisor 2: Petra Bosilj
+Name DACS thesis supervisor 3: optional
+Frequency of contact between DACS thesis supervisor(s) and student: multiple times a week
+
+External collaboration
+This thesis involves an external collaboration (check if an external party if actively involved)
+In case this thesis is not part of an external collaboration proceed to the section “assessment”.
+Name external institute:
+(Name the institute of external collaboration. In the case of multiple institutes, name
+the most important one and add an appendix with an overview of external parties)
+
+DACS bachelor thesis plan Spring 2026 S2 per 21-11-2025
+
+1
+
+This is: please select from drop-down list
+Location external institute:
+Name external supervisor:
+Frequency of contact between the external supervisor(s)/advisor(s) and student:
+Frequency of contact between the external supervisor(s)/advisor(s) and DACS thesis advisor(s):
+The student will be hosted by/have a secondment at the external institute (Check this if the student will work
+as an internal at the external institute or be visiting the external institute for a period larger than two weeks)
+The student will be hosted by the external institute for:
+The entire period
+A period of
+weeks
+During this period, the work times of the student are as follows:
+There is a confidentiality agreement with the following clauses: (check when applicable)
+The code developed will remain property of the external institute
+Special permission has been obtained for limited confidentiality (See Rules and Regulations and
+attach documents)
+Note that all thesis must be sent to the DACS Student Affairs Office for storing, where they can be labelled
+“confidential”, but DACS committees and assessment committees (visitatie commissies) will always have
+(confidential) access for auditing purposes.
+UM emphasizes that it is in your best interest to have the standardised UM threefold internship agreement signed, so
+that your rights and duties for an internship are ensured in accordance with UM standards. You can find this
+agreement (and more important information) here: sign in to the Maastricht University intranet and navigate to
+Home > DACS students > My studies > Thesis bachelor and on the page, there is a section which includes the form.
+Please select the agreement corresponding to your internship location, whether it is within or outside the
+Netherlands.
+On behalf of the external institute,
+
+, consents with this thesis plan
+
+Signature:
+Date of signing:
+
+Assessment
+The assessment will be based on:
+(Specify the terms of assessment that at least should contain the thesis, process and the presentation)
+The contents and form of the thesis, which must at least be sufficient for passing the thesis
+A (software) product that accompanies the thesis
+The presentation
+The process
+(optional)
+
+DACS bachelor thesis plan Spring 2026 S2 per 21-11-2025
+
+2
+
+Thesis details
+Thesis title: (Working title of the thesis)
+Improving Robustness And Practical Viability Of Ai-Based Cctv Violence/Incident Detection Under Township-Like
+Conditions In South Africa
+Description of the assignment: (A single page, describing the assignment and indications of the techniques that will
+be explored)
+This thesis evaluates whether AI-based CCTV violence, crime and aggression detection can be technically and
+operationally feasible in South African townships. In practice CCTV footage in townships involves low
+resolution, low light, blocked crowd and objects and has to deal with frequent power outages (loadshedding). These factors directly cause a "transferability" issue: a model may perform very well with
+controlled training, but results can degrade hugely under real-world conditions.
+Therefore, we will go further than just applying pre-trained models in a township. The goal is to create
+technical novelty by coming up with and evaluating an adapted architecture and training approach to
+improve robustness and accuracy in township contexts. The work will be conducted using public CCTV-style
+datasets tagged with violence vs non-violence / incident vs non-incident. This enables reproducible
+evaluation without requiring sensitive local CCTV data.
+This thesis will consist of four components:
+Mapping existing approaches and evidence quality: Conduct a structured review of AI-enabled CCTV
+violence/incident detection research and reported deployments. Extract model families, data assumptions
+and metrics used. Distinguish benchmark-only evidence from field evaluations.
+Baseline implementation and evaluation on public annotated datasets: Reproduce at least one
+representative baseline model for video violence/incident detection. Establish a transparent evaluation
+pipeline and report baseline results.
+Township robustness benchmark via controlled degradations: Create a township-like stress test benchmark
+by systematically degrading the videos (down sampling, compression, low-light, blur etc). Quantify the
+decrease in performance and analyse failure models focusing on false positives. This benchmark will be
+referred to as the Township Corruption Benchmark and is a core contribution of this thesis, inspired by video
+corruption benchmarks. Chang et al. (2020) study realistic video file corruptions and report large accuracy
+drops in action recognition, motivating corruption-oriented evaluation beyond clean benchmarks.
+Technically novel robustness improvement and viability assessment: Propose and evaluate an adapted
+architecture and training method aimed at improving robustness under degradations. Compare results
+against baselines and report improvements. Robustness training will be included by training with both clean
+and degraded data. Similar to corruption-aware augmentation strategies like PRIME (Modas et al., 2022).
+Datasets (public, annotated and CCTV-style):
+Bus Violence (Ciampi et al., 2022): 1400 videos (700 violence/700 non-violence) recorded from three
+cameras in a bus. Variation of lighting and backgrounds.
+Real-Life Violence Situations (RLVS): 2000 videos collected from real world scenes.
+Surveillance Camera Fight dataset: 300 videos (150 fight / 150 non-fight). Surveillance footage.
+Baseline models/architecture: I3D (inflated 3D ConvNet), SlowFast Networks. 3D CNNs are strong baselines
+on violence datasets and have been used in Bus Violence experiments (Ciampi et al., 2022). Along with a 3D
+CNN baseline, a modern transformer baseline will be included to compare robustness behaviour under
+corruptions. For the baseline comparison, I will pick only one model for each family: SlowFast Networks as
+the 3D CNN baseline (Feichtenhofer et al., 2019) and Video Swin Transformer as the transformer baseline
+(Liu et al., 2022).
+Experiments to answer research questions:
+DACS bachelor thesis plan Spring 2026 S2 per 21-11-2025
+
+3
+
+Standard evaluation: training/validate/test on each dataset using official splits when available or use
+(70/15/15) with a random seed then report baseline performance.
+Township-like robustness benchmark: edit the video quality down sample / compress / reduce brightness /
+motion blur / occlusions / reduce FPS, on 3 levels: mild, medium and severe. Township corruption taxonomy
+examples: spatial quality: resolution down sampling (e.g. 224→112→64). JPEG/MPEG compression (different
+bitrates) / motion blur / low-light / reduced FPS (simulate cheap cameras and dropped frames) and scenelevel: synthetic occlusion (random rectangles, blocking view), mild camera shake.
+Technical novelty: propose and evaluate an adapted system and training approach to improve robustness
+under township like scenarios, for example adding a quality-aware component to deal with low video
+quality. Compare the adapted system against the baseline models on both clean and degraded videos and
+check if robustness improved without an unacceptable increase in false positives.
+Evaluation: report accuracy, precision, recall and F1 on each dataset. Also ROC/AUC and confusion matrices
+looking specifically at false positives. Evaluate clean vs degraded videos (mild, medium and severe) for each
+corruption type, and summarise results in a table showing performance of each model under each condition
+so an answer can be given about the extent to which this problem can be solved under various conditions.
+References (APA):
+Carreira, J., & Zisserman, A. (2017). Quo Vadis, Action Recognition? A New Model and the Kinetics Dataset.
+Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR).
+Chang, T., Fu, D. Y., Li, Y., & Ré, C. (2020). Beyond the Pixels: Exploring the Effect of Video File Corruptions on
+Model Robustness. ECCV Workshop on Adversarial Robustness in the Real World (AROW).
+Ciampi, L., Foszner, P., Messina, N., Staniszewski, M., Gennaro, C., Falchi, F., Serao, G., Cogiel, M., Golba, D.,
+Szczęsna, A., & Amato, G. (2022). Bus Violence: An Open Benchmark for Video Violence Detection on Public
+Transport. Sensors, 22(21), 8345. https://doi.org/10.3390/s22218345
+Feichtenhofer, C., Fan, H., Malik, J., & He, K. (2019). SlowFast Networks for Video Recognition. Proceedings
+of the IEEE/CVF International Conference on Computer Vision (ICCV).
+Liu, Z., Ning, J., Cao, Y., Wei, Y., Zhang, Z., Lin, S., & Hu, H. (2022). Video Swin Transformer. Proceedings of
+the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR).
+Modas, A., Rade, R., Ortiz-Jiménez, G., Moosavi-Dezfooli, S.-M., & Frossard, P. (2022). PRIME: A Few
+Primitives Can Boost Robustness to Common Corruptions. European Conference on Computer Vision (ECCV).
+Planning: (Provide a complete planning for the thesis period with a reasonable time path for completion, including
+time for writing the thesis. The preferred format is a Gantt chart that you can attach separately)
+
+DACS bachelor thesis plan Spring 2026 S2 per 21-11-2025
+
+4
+
+DACS bachelor thesis plan Spring 2026 S2 per 21-11-2025
+
+5
+
+Problem statement: (Single sentence describing the overall challenge faced by the student)
+AI-based CCTV violence/incident detection often shows high benchmark performance, but its reliability and
+performance decreases under low-quality, crowded, and resource-constrained conditions, making it unclear whether
+it can be viable in township-like environments without targeted robustness improvements.
+Research questions: (Provide two to five research questions of a single sentence that by answering them, jointly
+provide a path for addressing the problem statement)
+1. How do representative baseline CCTV violence/incident detection models perform on public annotated
+CCTV-style datasets under standard evaluation, and what patterns of false positives and false negatives
+emerge?
+2. To what extent does performance degrade when the same models are evaluated under township-like video
+conditions (e.g., low resolution, low-light, compression, blur, occlusion, reduced FPS), and which failure
+modes are most common at different severity levels?
+3. Can an adapted architecture or robustness-oriented training strategy improve accuracy and stability under
+degraded conditions compared to baselines, without causing unacceptable increases in false alarms,
+computational cost, or inference latency?
+4. Which specific degradation types contribute most to real-world transferability failures, and which mitigation
+strategies provide the best trade-off between performance on clean footage and robustness against
+degraded township-like conditions (especially in terms of false positives vs. missed incidents)?
+5. (optional)?
+Alignment with Programme Objectives and Learning Outcomes: (Please specify in a few lines how the thesis topic
+relates to the objectives and courses in your programme)
+This thesis aligns with Computer Science as it will be incorperating AI and machine learning along with computer
+vision into a real world safety related problem. It includes research design, reproducing software development,
+robustness analysis. So it overall includes knowledge from machine learning, computer vision, data analysis and it
+will all be written in a scientific report which will follow acedemic standards.
+
+Signature
+The student would like to make the following additional statements to the Board of Examiners regarding this thesis
+plan: (optional)
+Ensure that you: (Ensure that you check all)
+are familiar with the Education and Examination Regulations (EER) that are published on student portal, as is
+expected of each student
+are familiar with the Rules and Regulations that are published on student portal, as is expected of each
+student
+are familiar with the concept of plagiarism and will refrain from committing it
+are aware of academic standards, in particular relating to proper citing
+have filled out the complete form
+have included a planning and/or attached a Gantt chart with a planning for your thesis
+have collected the signatures of both examiners and if applicable, the external institute
+DACS bachelor thesis plan Spring 2026 S2 per 21-11-2025
+
+6
+
+To avoid students starting too late with their thesis, the deadline for the thesis plans has been set by the thesis
+coordinator before some of the grades of the preceding semester have come in. Therefore, the possibility of getting
+conditional approval has been given.
+In separate, motivated requests to the Board of Examiners, dispensation from this rule can be requested for cases of
+hardship. Such motivated requests can be submitted to dacs-boe@maastrichtuniversity.nl and are accompanied by a
+study plan.
+I understand that I must have attained 138 ECTS already for this bachelor programme, of which 60 ECTS have
+been obtained in year 1 and at least 40 ECTS in year 2. I declare that (check one of the following):
+I have already obtained the required ECTS
+I do not yet have the required number of ECTS, but expect that once the grades of the resits,
+project/KE@work/MaRBLe 2.0 that took place in the semester preceding the thesis semester come in, I will
+have enough ECTS. Hence, I’m submitting for conditional approval and understand that, if the expected ECTS
+are not obtained, any conditional approval of the thesis will be automatically withdrawn.
+I do not have enough ECTS; but submitting this plan together with a motivated request for dispensation
+due to hardship and an individual study plan.
+Date:
+
+16/01/2026
+
+Student’s signature:
+
+Examiners
+There should be two thesis examiners that approve of this thesis plan. At least one of the examiners acts as a thesis
+supervisor. The examiners must be DACS staff members (lecturer, assistant, associate, or full professor) with a PhD
+degree, a uniform teaching qualification (UTQ) and are involved in the programme. See Rules and Regulations for
+additional conditions. Postdoctoral researchers can only act as second examiners as part of a training programme.
+The examiners have checked the form for the requirements in the EER and R&R and checked it with the ILOs. The
+examiners are also available in Maastricht for the bachelor conference indicated.
+Name proposed thesis examiner 1:
+
+Signature:
+
+Date of signing:
+
+Name proposed thesis examiner 2:
+
+Signature:
+
+Date of signing:
+
+DACS bachelor thesis plan Spring 2026 S2 per 21-11-2025
+
+7
+
+
