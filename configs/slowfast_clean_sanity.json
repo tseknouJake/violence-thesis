@@ -1,0 +1,22 @@
+{
+  "experiment_name": "clean_baseline_slowfast_sanity",
+  "model_name": "slowfast_sanity_path_logistic",
+  "model_family": "slowfast",
+  "baseline_strategy": "path_logistic_sanity",
+  "seed": 42,
+  "output_root": "outputs/experiments",
+  "splits": {
+    "train": "outputs/splits/train.csv",
+    "val": "outputs/splits/val.csv",
+    "test": "outputs/splits/test.csv"
+  },
+  "training": {
+    "epochs": 8,
+    "learning_rate": 0.05,
+    "weight_decay": 0.0001,
+    "feature_dim": 256,
+    "batch_size": 32,
+    "num_workers": 0,
+    "device": "cpu"
+  }
+}

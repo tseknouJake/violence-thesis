@@ -1,0 +1,33 @@
+{
+  "run_id": "clean_baseline_slowfast_sanity_slowfast_sanity_path_logistic_2f937eaf",
+  "started_at_utc": "2026-03-04T10:36:12.264751+00:00",
+  "finished_at_utc": "2026-03-04T10:36:12.328255+00:00",
+  "duration_seconds": 0.064,
+  "git_commit": "ffb2bfcd354239d44fa44fbaec9244173a5bda26",
+  "config_snapshot": {
+    "experiment_name": "clean_baseline_slowfast_sanity",
+    "model_name": "slowfast_sanity_path_logistic",
+    "model_family": "slowfast",
+    "baseline_strategy": "path_logistic_sanity",
+    "seed": 42,
+    "output_root": "outputs/experiments",
+    "splits": {
+      "train": "outputs/splits/train.csv",
+      "val": "outputs/splits/val.csv",
+      "test": "outputs/splits/test.csv"
+    },
+    "training": {
+      "epochs": 8,
+      "learning_rate": 0.05,
+      "weight_decay": 0.0001,
+      "feature_dim": 256,
+      "batch_size": 32,
+      "num_workers": 0,
+      "device": "cpu"
+    }
+  },
+  "environment": {
+    "python_version": "3.13.0 (v3.13.0:60403a5409f, Oct  7 2024, 00:37:40) [Clang 15.0.0 (clang-1500.3.9.4)]",
+    "notes": "Dependency-free training mode. Replace with torch SlowFast config when deps are installed."
+  }
+}

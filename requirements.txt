@@ -1,2 +1,10 @@
-# Intentionally minimal starter requirements.
-# Add model/framework deps (e.g., torch, pytorchvideo, mmcv) in a later phase.
+# Core training stack for thesis baselines.
+# Install when network is available.
+torch>=2.2
+torchvision>=0.17
+pytorchvideo>=0.1.5
+scikit-learn>=1.4
+opencv-python>=4.9
+
+# Existing project uses only stdlib today, but these are required
+# for real SlowFast/Swin experiments.
