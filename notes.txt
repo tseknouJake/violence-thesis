@@ -1,0 +1,53 @@
+Notes from meeting
+Should I maybe have more than 1 dataset? 
+
+- [ ] Dataset audit script is done (01_audit_dataset.py).
+- [ ] Reproducible train/val/test split script is done (02_make_splits.py).
+- [ ] Baseline run scaffold is done (03_run_baseline_stub.py).
+- [ ] Metrics scoring script is done (04_score_predictions.py).
+- [ ] A dependency-free “sanity” training script is done (05_train_baseline.py).
+- [ ] Reusable metric, dataset, and I/O modules are in place (metrics.py, csv_video_dataset.py, io_utils.py).
+- [ ] audited Bus Violence and confirmed it is balanced: 700 violence / 700 non-violence (bus_violence_audit.json).
+- [ ] created balanced deterministic splits: 980 train, 210 val, 210 test (split_summary.json).
+- [ ] ran baseline experiments and logged outputs cleanly in outputs/experiments/.
+- [ ] have baseline metrics files and run logs for comparison.
+
+
+Once the whole story is clear I can write introduction so write intro at the end
+
+Look at if there are any other things published on this dataset - try different models and compare. Look into other papers. Temporal models
+
+Try have a good general overview - I want to find available code on an open repo, have a baseline 
+
+Start with something available see why it works and why it doesn’t work discuss after this
+
+Looking at the hardware side of things. Use this to justify choices. Look t other research (NOT VERY SAFE FOR THE THESIS) 
+
+Have types of criminal activity behaviour - right now I only have for violence on busses.
+TODO: 
+- Define specific criminal activity that I interested in 
+- What can be detected easily, where do we struggle, 
+- Violence and non violence is too general -> we want to 
+- Look for articles on South Africa, types of behaviours etc (see which crime links to South Africa) 
+- See available GitHub repos 
+- Go clone repos and reproduce.
+- Research which crimes are most prevalent in South Africa 
+- Make datasets useful based on 
+- Download YouTube videos of crime in South Africa CCTV
+- Privacy Concerns: Activists have raised concerns about "digital apartheid," noting that some high-tech surveillance is disproportionately concentrated in wealthier areas
+
+How do I link it back 
+
+Find articles on South Africa - what kind of crime, computing issues, 
+
+
+SO:
+We need something that is easy to run - doesnt require lots of computing power.
+
+
+GOAL
+Measure how badly CCTV violence detectors break under township-like video conditions, then test whether a targeted robustness method can make them meaningfully more reliable without too many false alarms or too much compute cost. Your own plan already says the core of the work is: reproduce baselines, create a “Township Corruption Benchmark” with degradations like low resolution, blur, compression, low light, occlusion and reduced FPS, then evaluate an adapted robustness-oriented model/training strategy against those baselines
+
+https://chatgpt.com/share/69d779c5-75cc-8393-a586-95afb3d2db70
+
+
